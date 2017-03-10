@@ -11,7 +11,11 @@ class Monger extends Component {
 
 class Paragraph extends Component {
   render() {
-    return <p>{this.props.print}</p>
+    return (
+      <div className='App-header'>
+        <p>{this.props.print}</p>
+      </div>
+    )
   }
 }
 
