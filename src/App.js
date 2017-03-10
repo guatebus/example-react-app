@@ -28,6 +28,17 @@ class Article extends Component {
 }
 
 class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      user: { name:'', avatar:''},
+      isSomething: true,
+      posts: [],
+      literal: 'initial state'
+    }
+  }
+
   render() {
     const saludo = 'yuuuhuuu!!'
     const author = {name:'Carl Sagan', date:new Date('2017-03-09'), length:23}
@@ -37,6 +48,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>WQuiero ser un monki core monki</h2>
         </div>
+        <span>{this.state.literal}</span>
         <Monger saludo={saludo} literal='pipo' gender='neutral'/>
         <Monger saludo={saludo} literal='pipa' gender='neutral'/>
         <Monger saludo='yumyum' literal='yuli' age={33}/>
