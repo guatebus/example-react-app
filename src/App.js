@@ -40,11 +40,13 @@ class App extends Component {
     }
   }
 
-  changeState = (x) => {
-    this.setState({
-      literal: 'state changed!',
-      clickCount: this.state.clickCount + x
-    })
+  changeClickCount = (x) => {
+    return () => {
+      this.setState({
+        literal: 'state changed!',
+        clickCount: this.state.clickCount + x
+      })
+    }
   }
 
   render() {
@@ -57,8 +59,8 @@ class App extends Component {
           <h2>WQuiero ser un monki core monki</h2>
         </div>
         <p>Click count is: {this.state.clickCount}</p>
-        <button onClick={() => this.changeState(1)}>Increase count</button>
-        <button onClick={() => this.changeState(-1)}>Decrease count</button>
+        <button onClick={this.changeClickCount(1)}>Increase count</button>
+        <button onClick={this.changeClickCount(-1)}>Decrease count</button>
         <Monger saludo={saludo} literal='pipo' gender='neutral'/>
         <Monger saludo={saludo} literal='pipa' gender='neutral'/>
         <Monger saludo='yumyum' literal='yuli' age={33}/>
