@@ -40,7 +40,7 @@ class App extends Component {
     }
   }
 
-  changeClickCount = (x) => {
+  changeClickCount(x) {
     return () => {
       this.setState({
         literal: 'state changed!',
