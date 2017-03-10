@@ -35,17 +35,17 @@ class App extends Component {
       user: { name:'', avatar:''},
       isSomething: true,
       posts: [],
-      literal: 'initial state'
+      literal: 'initial state',
+      clickCount: 0
     }
     this.changeState = this.changeState.bind(this)
   }
 
   changeState() {
-    console.log(this.state.literal)
     this.setState({
-      literal: 'state changed!'
+      literal: 'state changed!',
+      clickCount: this.state.clickCount + 1
     })
-    console.log(this.state.literal)
   }
 
   render() {
@@ -57,7 +57,7 @@ class App extends Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>WQuiero ser un monki core monki</h2>
         </div>
-        <span>{this.state.literal}</span>
+        <p>Click count is: {this.state.clickCount}</p>
         <button onClick={this.changeState}>Change state</button>
         <Monger saludo={saludo} literal='pipo' gender='neutral'/>
         <Monger saludo={saludo} literal='pipa' gender='neutral'/>
