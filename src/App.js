@@ -12,7 +12,7 @@ class Monger extends Component {
 class Article extends Component {
   render() {
     return (
-      <div className='App-header'>
+      <div>
         <p>{this.props.print}</p>
         <p>Author name</p>
         <p>{this.props.author.name}</p>
@@ -37,6 +37,15 @@ class App extends Component {
       posts: [],
       literal: 'initial state'
     }
+    this.changeState = this.changeState.bind(this)
+  }
+
+  changeState() {
+    console.log(this.state.literal)
+    this.setState({
+      literal: 'state changed!'
+    })
+    console.log(this.state.literal)
   }
 
   render() {
@@ -49,12 +58,13 @@ class App extends Component {
           <h2>WQuiero ser un monki core monki</h2>
         </div>
         <span>{this.state.literal}</span>
+        <button onClick={this.changeState}>Change state</button>
         <Monger saludo={saludo} literal='pipo' gender='neutral'/>
         <Monger saludo={saludo} literal='pipa' gender='neutral'/>
         <Monger saludo='yumyum' literal='yuli' age={33}/>
 
         <Article print='Lorem ipsum monki trolling' author={author}>
-          <p>HEllo world some stuff here to render as children prop</p>
+          <span>HEllo world some stuff here to render as children prop</span>
         </Article>
       </div>
     );
