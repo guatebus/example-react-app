@@ -38,10 +38,9 @@ class App extends Component {
       literal: 'initial state',
       clickCount: 0
     }
-    this.changeState = this.changeState.bind(this)
   }
 
-  changeState() {
+  changeState = () => {
     this.setState({
       literal: 'state changed!',
       clickCount: this.state.clickCount + 1
