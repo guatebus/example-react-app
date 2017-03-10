@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component, PropTypes } from 'react'
 
 class Article extends Component {
   render() {
@@ -16,6 +16,15 @@ class Article extends Component {
       </div>
     )
   }
+}
+
+Article.propTypes = {
+  author: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    date: PropTypes.instanceOf(Date).isRequired,
+    length: PropTypes.number.isRequired
+  }).isRequired,
+  children: PropTypes.object.isRequired
 }
 
 export default Article
