@@ -17,7 +17,7 @@ class Article extends Component {
         <p>Author name</p>
         <p>{this.props.author.name}</p>
         <p>Article date</p>
-        <p>{this.props.author.date}</p>
+        <p>{this.props.author.date.toString()}</p>
         <p>Article length</p>
         <p>{this.props.author.length}</p>
         <p>Article content</p>
@@ -30,7 +30,7 @@ class Article extends Component {
 class App extends Component {
   render() {
     const saludo = 'yuuuhuuu!!'
-    const author = {name:'Carl Sagan', date:'2017-03-09', length:23}
+    const author = {name:'Carl Sagan', date:new Date('2017-03-09'), length:23}
     return (
       <div className="App">
         <div className="App-header">
