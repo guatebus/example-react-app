@@ -9,11 +9,19 @@ class Monger extends Component {
   }
 }
 
-class Paragraph extends Component {
+class Article extends Component {
   render() {
     return (
       <div className='App-header'>
         <p>{this.props.print}</p>
+        <p>Author name</p>
+        <p>{this.props.author.name}</p>
+        <p>Article date</p>
+        <p>{this.props.author.date}</p>
+        <p>Article length</p>
+        <p>{this.props.author.length}</p>
+        <p>Article content</p>
+        <p>{this.props.children}</p>
       </div>
     )
   }
@@ -22,6 +30,7 @@ class Paragraph extends Component {
 class App extends Component {
   render() {
     const saludo = 'yuuuhuuu!!'
+    const author = {name:'Carl Sagan', date:'2017-03-09', length:23}
     return (
       <div className="App">
         <div className="App-header">
@@ -32,7 +41,9 @@ class App extends Component {
         <Monger saludo={saludo} literal='pipa' gender='neutral'/>
         <Monger saludo='yumyum' literal='yuli' age={33}/>
 
-        <Paragraph print='Lorem ipsum monki trolling'/>
+        <Article print='Lorem ipsum monki trolling' author={author}>
+          <p>HEllo world some stuff here to render as children prop</p>
+        </Article>
       </div>
     );
   }
